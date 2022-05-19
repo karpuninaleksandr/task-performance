@@ -7,17 +7,9 @@ function addContacts() {
   contacts.insertAdjacentHTML('beforeend', html.join(''))
 }
 
-let requested = false
-contacts.addEventListener("scroll", (e) => {
-  if (!requested) {
-    window.requestAnimationFrame(function() {
-      const items = Array.from(contacts.getElementsByClassName("contact"));
-      const topItemIndex = items.findIndex((e) => contacts.scrollTop - e.offsetTop <= -18)
-      stickyHeader.textContent = items[topItemIndex].textContent;
-      requested = false
-  });
-  requested = true
-}
+contacts.addEventListener("scroll", () => {
+  const offsetTop_from = document.getElementsByClassName('contact')[0]
+  stickyHeader.textContent = parseInt(contacts.scrollTop / offsetTop_from.offsetTop)
 });
 
 addContacts();

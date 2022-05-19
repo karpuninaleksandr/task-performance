@@ -3,6 +3,5 @@
 2. Функция addContacts => вместо создания и подключения 50000 элементов производится
 запись всех элементов в html и единовременная запись в contact через insertAdjacentHTML
 
-3. Лисенер scroll'a y contacts => теперь индекс ищется не в map'e offset'ов, а в массиве без
-преобразования в map; используется window.requestAnimationFrame для обновления анимации
-на странице
+3. Лисенер scroll'a y contacts => так как высота у элементов класса contact одинакова, можно брать текст для
+stickyHeader'a путем деленя contacts.offsetTop на высоту contact
