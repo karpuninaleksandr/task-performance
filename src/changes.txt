@@ -1,0 +1,7 @@
+1. Подключение скриптов в index.html => stats - defer; contacts - async
+
+2. Функция addContacts => вместо создания и подключения 50000 элементов производится
+запись всех элементов в html и единовременная запись в contact через insertAdjacentHTML
+
+3. Лисенер scroll'a y contacts => так как высота у элементов класса contact одинакова, можно брать текст для
+stickyHeader'a путем деленя contacts.offsetTop на высоту contact
